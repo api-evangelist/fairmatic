@@ -1,17 +1,40 @@
 aid: fairmatic
 name: Fairmatic
-description: 'Fairmatic is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Fairmatic was a San Francisco commercial-auto insurance MGA founded in 2017 that underwrote and
+  priced fleet policies from phone-collected telematics. It rebranded to LEEO Insurance Services on
+  2025-12-15, and every Fairmatic-branded web surface now 301/302 redirects to leeoinsurance.com:
+  fairmatic.com and www.fairmatic.com to leeoinsurance.com, docs.fairmatic.com to
+  docs.leeoinsurance.com, app.fairmatic.com to app.leeoinsurance.com. The old API host
+  api.fairmatic.com returns 404 at its root; the live REST Fleet Telematics API is served from
+  api.leeoinsurance.com/api/v1. This repository is therefore a DUPLICATE STUB, created by the
+  harvest backlog from a secondary-market share-listing page rather than from the company's own
+  domain. The canonical, fully enriched profile of this company is all/leeo-insurance-services,
+  which already carries the four OpenAPIs, the authentication, conventions, error, lifecycle,
+  changelog, conformance, data-model, MCP, llms.txt, skills, agentic-access and domain-security
+  artifacts, and the complete Fairmatic-branded SDK line (npm, Maven Central, NuGet, CocoaPods).
+  No artifacts are wired here on purpose: duplicating them would split one company across two
+  listings and two Kin Scores.
 url: https://raw.githubusercontent.com/api-evangelist/fairmatic/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
-x-tier-reason: harvest
+x-tier-reason: duplicate-of-existing-provider
+x-duplicate-of: leeo-insurance-services
+x-renamed-to: LEEO Insurance Services
+x-rebrand-date: '2025-12-15'
 specificationVersion: '0.20'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Insurance
+- Insurtech
+- Commercial Auto Insurance
+- Telematics
+- Fleet Management
+- Managing General Agent
+- Renamed
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +43,35 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/fairmatic_stock/
+  url: https://leeoinsurance.com/
+x-enrichment:
+  date: '2026-08-12'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
+  note: >-
+    Contract discovery ran against every Fairmatic host and found no first-party surface still
+    served under the Fairmatic brand — all of it redirects to LEEO Insurance Services, already
+    profiled at all/leeo-insurance-services. Recorded the duplicate rather than building a second
+    artifact tree.
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Fairmatic was renamed LEEO Insurance Services in December 2025 and every Fairmatic host now
+    redirects to leeoinsurance.com (api.fairmatic.com 404s outright), so the live API surface is
+    already profiled under all/leeo-insurance-services and nothing remains to enrich here.
+  evidence:
+  - url: https://fairmatic.com/
+    status: 301
+  - url: https://docs.fairmatic.com/
+    status: 302
+  - url: https://app.fairmatic.com/login/
+    status: 301
+  - url: https://api.fairmatic.com/
+    status: 404
+  - url: https://api.fairmatic.com/openapi.json
+    status: 404
+  - url: https://forgeglobal.com/fairmatic_stock/
+    status: 403
+  checked: '2026-08-12'
