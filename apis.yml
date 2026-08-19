@@ -23,7 +23,7 @@ x-tier-reason: duplicate-of-existing-provider
 x-duplicate-of: leeo-insurance-services
 x-renamed-to: LEEO Insurance Services
 x-rebrand-date: '2025-12-15'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-12'
 modified: '2026-08-12'
 tags:
